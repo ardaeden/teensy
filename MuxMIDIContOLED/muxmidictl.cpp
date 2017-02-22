@@ -10,7 +10,7 @@
 ******************************************************/
 
 #include "muxmidictl.h"
-#include <arduino.h>
+#include <Arduino.h>
 
 Mux::Mux(int teensyInputPin_) {
   teensyInputPin = teensyInputPin_;

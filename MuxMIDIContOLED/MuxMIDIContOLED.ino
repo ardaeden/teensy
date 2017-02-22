@@ -42,12 +42,12 @@ Adafruit_SSD1306 display(OLED_RESET);
 void setup() {
   initTeensy();
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-  display.setTextSize(3);
+  display.setTextSize(2);
   display.setTextColor(WHITE);
-  
-  display.display();
-  delay(2000);
   display.clearDisplay();
+  display.display();
+  delay(50);
+
   display.setCursor(0,0);
 }
 
