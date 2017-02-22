@@ -11,8 +11,8 @@
 
 #include "muxmidictl.h"
 #include <MIDI.h>
-#include <SPI.h>
-#include <Wire.h>
+//#include <SPI.h>
+//#include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
@@ -31,8 +31,9 @@ Pot P1(M1, "Pot1", 0, 20, 1);
 Pot P2(M1, "Pot2", 1, 21, 1);
 Pot P3(M2, "Pot3", 0, 22, 1);
 Pot P4(M2, "Pot4", 1, 23, 2);
-
 Pot *Pots[] {&P1, &P2, &P3, &P4};
+
+
 
 Adafruit_SSD1306 display(OLED_RESET);
 
@@ -40,6 +41,7 @@ Adafruit_SSD1306 display(OLED_RESET);
 
 
 void setup() {
+
   initTeensy();
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
   display.setTextSize(2);
@@ -65,7 +67,7 @@ void initTeensy() {
 }
 
 void updateMIDI() {
-   for (int i = 0; i < NUM_POTS; i++) {
+  for (int i = 0; i < NUM_POTS; i++) {
     int controlMsg = Pots[i]->getPotValue();
     if (controlMsg != 255) {
       display.setCursor(0,0);
