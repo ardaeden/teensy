@@ -27,7 +27,6 @@ class Pot {
     int potControl;
     int potChannel;
  
-
   private:
     int _potTeensyPin;
     int _potMuxPin;
